@@ -14,7 +14,22 @@ function App() {
           </div>
         </div>
         <div className="welcome-right">
-          <div>something will go here</div>
+          <div className="sections">
+            <ul>
+              <li>
+                <span>01</span> About Me
+              </li>
+              <li>
+                <span>02</span> Technologies
+              </li>
+              <li>
+                <span>03</span> My Work
+              </li>
+              <li>
+                <span>04</span> Contact Me
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
     </div>
