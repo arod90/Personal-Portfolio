@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-scroll';
 import { useInView } from 'react-intersection-observer';
 import { motion, useAnimation } from 'framer-motion';
@@ -18,6 +18,10 @@ import { FiFigma } from 'react-icons/fi';
 import './App.css';
 
 function App() {
+  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible2, setIsVisible2] = useState(false);
+  const [isVisible3, setIsVisible3] = useState(false);
+
   const [ref, inView] = useInView({
     threshold: 0.9,
   });
@@ -33,11 +37,15 @@ function App() {
   const [ref5, inView5] = useInView({
     threshold: 0.5,
   });
+  const [ref6, inView6] = useInView({
+    threshold: 0.5,
+  });
   const animation = useAnimation();
   const animation2 = useAnimation();
   const animation3 = useAnimation();
   const animation4 = useAnimation();
   const animation5 = useAnimation();
+  const animation6 = useAnimation();
 
   useEffect(() => {
     if (inView) {
@@ -98,36 +106,32 @@ function App() {
   useEffect(() => {
     if (inView4) {
       animation4.start({
-        x: 0,
         transition: {
-          type: 'spring',
-          duration: 1,
-          bounce: 0.3,
+          delay: 4.5,
         },
       });
+      setIsVisible(true);
     }
     if (!inView4) {
-      animation4.start({
-        x: '-100vw',
-      });
+      setIsVisible(false);
     }
   }, [inView4, animation4]);
 
   useEffect(() => {
     if (inView5) {
-      animation5.start({
-        x: 0,
-        transition: {
-          type: 'spring',
-          duration: 1,
-          bounce: 0.3,
-        },
-      });
+      setIsVisible2(true);
     }
-    if (!inView5) {
-      animation5.start({
-        x: '-100vw',
-      });
+    if (!inView6) {
+      setIsVisible2(false);
+    }
+  }, [inView5, animation5]);
+
+  useEffect(() => {
+    if (inView6) {
+      setIsVisible3(true);
+    }
+    if (!inView6) {
+      setIsVisible3(false);
     }
   }, [inView5, animation5]);
 
@@ -197,7 +201,8 @@ function App() {
             <div ref={ref3} className="ap">
               <motion.p animate={animation3}>
                 Outside of work I'm a huge fan of competitive paintball,
-                E-sports, Music, and the great outdoors<span>.</span>
+                E-sports, Music, and the great outdoors
+                <span className="ap-dot">.</span>
               </motion.p>
             </div>
           </div>
@@ -218,14 +223,26 @@ function App() {
             <span>
               <SiHeroku />
             </span>
-            <span>
-              <SiMongodb />
+            <span
+              className="mdb-logo-wrap"
+              data-logoIsVisible2={isVisible2}
+              ref={ref5}
+            >
+              <SiMongodb className="mdb-logo" />
             </span>
-            <span>
-              <SiJavascript />
+            <span
+              className="js-logo-wrap"
+              data-logoIsVisible3={isVisible3}
+              ref={ref6}
+            >
+              <SiJavascript className="js-logo" />
             </span>
-            <span>
-              <SiTypescript />
+            <span
+              className="ts-logo-wrap"
+              data-logoIsVisible={isVisible}
+              ref={ref4}
+            >
+              <SiTypescript className="ts-logo" />
             </span>
             <span>
               <SiRedux />
@@ -237,13 +254,13 @@ function App() {
               <FaNodeJs />
             </span>
             <span>
-              <FaReact />
+              <FaReact className="react-logo" />
             </span>
             <span>
               <DiHtml5 />
             </span>
             <span>
-              <DiCss3 />
+              <DiCss3 className="css-logo" />
             </span>
           </motion.div>
         </div>

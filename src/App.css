@@ -255,3 +255,144 @@
 .tool-wrapper span {
   margin-right: 40px;
 }
+
+.ap-dot {
+  color: #e65634;
+  font-size: 2vw;
+  text-decoration: none !important;
+}
+
+.react-logo {
+  color: #e65634;
+  animation: spin 5s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.ts-logo {
+  color: #3077c6;
+  transform: rotate(-90deg);
+}
+
+.ts-logo-wrap[data-logoIsVisible='true'] {
+  animation: rotate-90-cw 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation-delay: 0.4s;
+}
+
+.js-logo {
+  color: #fcdc00;
+}
+
+.js-logo-wrap[data-logoIsVisible3='true'] {
+  animation: crescendo 1.5s alternate infinite ease-in;
+  animation-delay: 0.8s;
+}
+
+.mdb-logo {
+  color: #00ec64;
+}
+
+.mdb-logo-wrap[data-logoIsVisible2='true'] {
+  animation: rotate-90-cw 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  animation-delay: 1s;
+}
+
+.css-logo {
+  color: #214ce4;
+  animation: cssbounce 5s linear infinite;
+}
+
+/* MAKE THE ICONS POP ON SCROLL */
+
+@keyframes cssbounce {
+  0% {
+    transform: scale(1, 1) translateY(0);
+  }
+  2% {
+    transform: scale(1.1, 0.9) translateY(0);
+  }
+  6% {
+    transform: scale(0.9, 1.1) translateY(-30px);
+  }
+  10% {
+    transform: scale(1.05, 0.95) translateY(0);
+  }
+  11.4% {
+    transform: scale(1, 1) translateY(-7px);
+  }
+  12.8% {
+    transform: scale(1, 1) translateY(0);
+  }
+  20% {
+    transform: scale(1, 1) translateY(0);
+  }
+  100% {
+    transform: scale(1, 1) translateY(0);
+  }
+}
+
+@keyframes crescendo {
+  0% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+@-webkit-keyframes rotate-90-cw {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+}
+@keyframes rotate-90-cw {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+}
+
+/* MAKE CLICK ON SCROLL ONLY WAY TO ANIMATE, MAKE IT A STORY CHANGIN MESSAGE WITH STATE */
+
+/* TECHNOLOGIES I LOVE MAYBE CROWN ON CSS */
