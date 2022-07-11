@@ -3,9 +3,17 @@ import { Link } from 'react-scroll';
 import { useInView } from 'react-intersection-observer';
 import { motion, useAnimation } from 'framer-motion';
 import { FaReact, FaNodeJs } from 'react-icons/fa';
-import { DiCss3 } from 'react-icons/di';
-import { DiHtml5 } from 'react-icons/di';
-import { SiMongodb } from 'react-icons/si';
+import { DiCss3, DiHtml5 } from 'react-icons/di';
+import {
+  SiMongodb,
+  SiExpress,
+  SiJavascript,
+  SiTypescript,
+  SiRedux,
+  SiFirebase,
+  SiHeroku,
+} from 'react-icons/si';
+import { FiFigma } from 'react-icons/fi';
 
 import './App.css';
 
@@ -143,7 +151,7 @@ function App() {
               </li>
               <li>
                 <Link to="02" smooth={true}>
-                  <span>02</span> Technologies
+                  <span>02</span> Toolkit
                 </Link>
               </li>
               <li>
@@ -202,8 +210,42 @@ function App() {
           </h1>
           <h2>TOOLKIT</h2>
         </div>
-        <div className="about-cont">
-          <motion.div className="show"></motion.div>
+        <div className="tool-cont">
+          <motion.div className="tool-wrapper">
+            <span>
+              <SiExpress />
+            </span>
+            <span>
+              <SiHeroku />
+            </span>
+            <span>
+              <SiMongodb />
+            </span>
+            <span>
+              <SiJavascript />
+            </span>
+            <span>
+              <SiTypescript />
+            </span>
+            <span>
+              <SiRedux />
+            </span>
+            <span>
+              <SiFirebase />
+            </span>
+            <span>
+              <FaNodeJs />
+            </span>
+            <span>
+              <FaReact />
+            </span>
+            <span>
+              <DiHtml5 />
+            </span>
+            <span>
+              <DiCss3 />
+            </span>
+          </motion.div>
         </div>
       </section>
       <section className="work section">
