@@ -203,7 +203,7 @@
 }
 
 .num-name h2 {
-  font-size: 4.7vw;
+  font-size: 4.1vw;
   margin-top: -70px;
 }
 
@@ -219,7 +219,7 @@
 }
 
 .p-wrapper {
-  width: 80%;
+  width: 75%;
 }
 
 .ap {
@@ -264,7 +264,7 @@
 
 .react-logo {
   color: #e65634;
-  animation: spin 5s linear infinite;
+  animation: spin 9s linear infinite;
 }
 
 @keyframes spin {
@@ -283,7 +283,7 @@
 
 .ts-logo-wrap[data-logoIsVisible='true'] {
   animation: rotate-90-cw 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  animation-delay: 0.4s;
+  animation-delay: 0.9s;
 }
 
 .js-logo {
@@ -292,7 +292,7 @@
 
 .js-logo-wrap[data-logoIsVisible3='true'] {
   animation: crescendo 1.5s alternate infinite ease-in;
-  animation-delay: 0.8s;
+  animation-delay: 1s;
 }
 
 .mdb-logo {
@@ -303,12 +303,12 @@
   animation: rotate-90-cw 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
   transform: translate3d(0, 0, 0);
-  animation-delay: 1s;
+  animation-delay: 1.2s;
 }
 
 .css-logo {
   color: #214ce4;
-  animation: cssbounce 5s linear infinite;
+  animation: cssbounce 8s linear infinite;
 }
 
 /* MAKE THE ICONS POP ON SCROLL */
@@ -342,10 +342,10 @@
 
 @keyframes crescendo {
   0% {
-    transform: scale(0.95);
+    transform: scale(0.98);
   }
   100% {
-    transform: scale(1.05);
+    transform: scale(1.02);
   }
 }
 
@@ -396,3 +396,116 @@
 /* MAKE CLICK ON SCROLL ONLY WAY TO ANIMATE, MAKE IT A STORY CHANGIN MESSAGE WITH STATE */
 
 /* TECHNOLOGIES I LOVE MAYBE CROWN ON CSS */
+
+/* CONTACT SECTION & FORM */
+
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.contact h2[data-isOrange='true'] {
+  color: #e65634;
+  opacity: 1 !important;
+}
+.contact h1[data-isOrange='true'] {
+  color: #e65634;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 30px;
+  height: 80%;
+  width: 50%;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
+  width: 90%;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+form label {
+  color: #bebebeb4;
+  font-size: 2vw;
+  font-weight: bold;
+  text-align: right;
+  opacity: 0.6;
+  margin-bottom: -20px;
+  margin-right: 40px;
+}
+
+form input {
+  background-color: transparent;
+  height: 7%;
+  border: none;
+  width: 90%;
+  border-bottom: 1px solid #bebebe72;
+  font-size: 2vw;
+  color: #bebebeca;
+  text-align: right;
+  color: #e65534bc;
+  padding: 5px;
+}
+
+form input:focus {
+  outline-color: #e65634;
+  outline-style: solid;
+  border: none;
+}
+
+form input:active {
+  transform: translateY(3px);
+}
+
+form textarea {
+  width: 90%;
+  background-color: transparent;
+  border: 1px solid #bebebeca;
+  resize: none;
+  font-size: 2vw;
+  color: #bebebeca;
+  font-family: 'Ubuntu', sans-serif;
+  color: #e65534bc;
+  padding: 5px;
+}
+
+form textarea:active {
+  transform: translateY(3px);
+}
+
+form textarea:focus {
+  outline-color: #e65634;
+  outline-style: solid;
+  border: none;
+}
+
+form button {
+  width: 50%;
+  align-self: center;
+  background-color: transparent;
+  color: #bebebe91;
+  border: 2px solid #bebebea2;
+  height: 9%;
+  width: 40%;
+  font-size: 2vw;
+  cursor: pointer;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+form button:hover {
+  border: 2px solid #e65534b3;
+  color: #e65534b4;
+}
+
+form button:active {
+  transform: translateY(3px);
+}

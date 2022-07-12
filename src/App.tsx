@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-scroll';
 import { useInView } from 'react-intersection-observer';
 import { motion, useAnimation } from 'framer-motion';
@@ -14,13 +14,38 @@ import {
   SiHeroku,
 } from 'react-icons/si';
 import { FiFigma } from 'react-icons/fi';
-
+import emailjs from '@emailjs/browser';
 import './App.css';
+import { setCommentRange } from 'typescript';
 
 function App() {
+  const form: any = useRef();
+
+  const sendEmail = (e: any) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        'service_0qfvivd',
+        'template_mrfa2si',
+        form.current,
+        'x3mm8jhRARDdTOeBt'
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    e.target.reset();
+  };
+
   const [isVisible, setIsVisible] = useState(false);
   const [isVisible2, setIsVisible2] = useState(false);
   const [isVisible3, setIsVisible3] = useState(false);
+  const [orange, setOrange] = useState(false);
 
   const [ref, inView] = useInView({
     threshold: 0.9,
@@ -135,6 +160,10 @@ function App() {
     }
   }, [inView5, animation5]);
 
+  const toggleOrange = () => {
+    setOrange(true);
+  };
+
   return (
     <div className="wrapper">
       <section className="welcome section">
@@ -177,7 +206,7 @@ function App() {
           <h1 id="01" className="section-num">
             01
           </h1>
-          <h2>About Me</h2>
+          <h2>ABOUT ME</h2>
         </div>
         <div className="about-cont">
           <div className="p-wrapper">
@@ -262,18 +291,45 @@ function App() {
             <span>
               <DiCss3 className="css-logo" />
             </span>
+            <span>
+              <FiFigma />
+            </span>
           </motion.div>
         </div>
       </section>
       <section className="work section">
-        <h1 id="03" className="section-num">
-          03
-        </h1>
+        <div className="num-name">
+          <h1 id="03" className="section-num">
+            03
+          </h1>
+          <h2>MY WORK</h2>
+        </div>
       </section>
       <section className="contact section">
-        <h1 id="04" className="section-num">
-          04
-        </h1>
+        <div className="num-name">
+          <h1 data-isOrange={orange} id="04" className="section-num">
+            04
+          </h1>
+          <h2 data-isOrange={orange}>CONTACT ME</h2>
+        </div>
+        <div className="contact-form">
+          <form
+            id="contact-form"
+            autoComplete="off"
+            ref={form}
+            onSubmit={sendEmail}
+          >
+            <label>What's your name</label>
+            <input onSelect={toggleOrange} type="text" name="user_name" />
+            <label>where can I reach you</label>
+            <input onSelect={toggleOrange} type="email" name="user_email" />
+            <label>Message</label>
+            <textarea onSelect={toggleOrange} name="message" rows={5} />
+            <button type="submit" value="Send">
+              Lets connect
+            </button>
+          </form>
+        </div>
       </section>
     </div>
   );
