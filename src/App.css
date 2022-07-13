@@ -546,6 +546,7 @@
 .project1-info a {
   font-size: 1.2vw;
   border: 1px solid #bebebe;
+  color: #bebebe;
   padding: 10px;
   border-radius: 5px;
   text-decoration: none;
@@ -575,6 +576,7 @@
 .project2-info a {
   font-size: 1.2vw;
   border: 1px solid #bebebe;
+  color: #bebebe;
   padding: 10px;
   border-radius: 5px;
   text-decoration: none;
