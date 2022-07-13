@@ -15,63 +15,69 @@ import {
 } from 'react-icons/si';
 import { FiFigma } from 'react-icons/fi';
 import emailjs from '@emailjs/browser';
-import './App.css';
 import { setCommentRange } from 'typescript';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import './App.css';
 
 function App() {
-  const form: any = useRef();
-
-  const sendEmail = (e: any) => {
-    e.preventDefault();
-
-    emailjs
-      .sendForm(
-        'service_0qfvivd',
-        'template_mrfa2si',
-        form.current,
-        'x3mm8jhRARDdTOeBt'
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
-    e.target.reset();
-  };
-
   const [isVisible, setIsVisible] = useState(false);
   const [isVisible2, setIsVisible2] = useState(false);
   const [isVisible3, setIsVisible3] = useState(false);
   const [orange, setOrange] = useState(false);
+  const form: any = useRef();
 
+  // ABOUT SECTION FIRST P TAG
   const [ref, inView] = useInView({
     threshold: 0.9,
   });
+  // ABOUT SECTION SECOND P TAG
   const [ref2, inView2] = useInView({
     threshold: 0.9,
   });
+  // ABOUT SECTION THIRD P TAG
   const [ref3, inView3] = useInView({
     threshold: 0.9,
   });
+  // TS LOGO ANIMATION
   const [ref4, inView4] = useInView({
     threshold: 0.5,
   });
+  // MONGODB LOGO ANIMATION
   const [ref5, inView5] = useInView({
     threshold: 0.5,
   });
+  // JS LOGO ANIMATION
   const [ref6, inView6] = useInView({
     threshold: 0.5,
   });
-  const animation = useAnimation();
-  const animation2 = useAnimation();
-  const animation3 = useAnimation();
-  const animation4 = useAnimation();
-  const animation5 = useAnimation();
-  const animation6 = useAnimation();
+  // PROJECT 1 ANIMATION
+  const [ref7, inView7] = useInView({
+    threshold: 0.7,
+  });
+  // PROJECT 2 ANIMATION
+  const [ref8, inView8] = useInView({
+    threshold: 0.7,
+  });
 
+  // ABOUT SECTION FIRST P TAG
+  const animation = useAnimation();
+  // ABOUT SECTION SECOND P TAG
+  const animation2 = useAnimation();
+  // ABOUT SECTION THIRD P TAG
+  const animation3 = useAnimation();
+  // TS LOGO ANIMATION
+  const animation4 = useAnimation();
+  // MONGODB LOGO ANIMATION
+  const animation5 = useAnimation();
+  // JS LOGO ANIMATION
+  const animation6 = useAnimation();
+  // PROJECT 1 ANIMATION
+  const animation7 = useAnimation();
+  // PROJECT 2 ANIMATION
+  const animation8 = useAnimation();
+
+  // ABOUT SECTION FIRST P TAG
   useEffect(() => {
     if (inView) {
       animation.start({
@@ -90,6 +96,7 @@ function App() {
     }
   }, [inView, animation]);
 
+  // ABOUT SECTION SECOND P TAG
   useEffect(() => {
     if (inView2) {
       animation2.start({
@@ -109,6 +116,7 @@ function App() {
     }
   }, [inView2, animation2]);
 
+  // ABOUT SECTION THIRD P TAG
   useEffect(() => {
     if (inView3) {
       animation3.start({
@@ -128,6 +136,7 @@ function App() {
     }
   }, [inView3, animation3]);
 
+  // TS LOGO ANIMATION
   useEffect(() => {
     if (inView4) {
       animation4.start({
@@ -142,15 +151,17 @@ function App() {
     }
   }, [inView4, animation4]);
 
+  // MONGODB LOGO ANIMATION
   useEffect(() => {
     if (inView5) {
       setIsVisible2(true);
     }
-    if (!inView6) {
+    if (!inView5) {
       setIsVisible2(false);
     }
   }, [inView5, animation5]);
 
+  // JS LOGO ANIMATION
   useEffect(() => {
     if (inView6) {
       setIsVisible3(true);
@@ -158,11 +169,81 @@ function App() {
     if (!inView6) {
       setIsVisible3(false);
     }
-  }, [inView5, animation5]);
+  }, [inView6, animation6]);
+
+  // PROJECT 1 ANIMATION
+  useEffect(() => {
+    if (inView7) {
+      animation7.start({
+        y: '112%',
+        transition: {
+          type: 'spring',
+          duration: 1,
+          bounce: 0.3,
+          delay: 0.5,
+        },
+      });
+    }
+    if (!inView7) {
+      animation7.start({
+        y: 0,
+      });
+    }
+  }, [inView7, animation7]);
+
+  // PROJECT 2 ANIMATION
+  useEffect(() => {
+    if (inView8) {
+      animation8.start({
+        y: '-112%',
+        transition: {
+          type: 'spring',
+          duration: 1,
+          bounce: 0.3,
+          delay: 0.45,
+        },
+      });
+    }
+    if (!inView8) {
+      animation8.start({
+        y: 0,
+      });
+    }
+  }, [inView8, animation8]);
+
+  // FUNCTIONS
 
   const toggleOrange = () => {
     setOrange(true);
   };
+
+  const sendEmail = (e: any) => {
+    e.preventDefault();
+
+    // emailjs
+    //   .sendForm(
+    //     'service_0qfvivd',
+    //     'template_mrfa2si',
+    //     form.current,
+    //     'x3mm8jhRARDdTOeBt'
+    //   )
+    //   .then(
+    //     (result) => {
+    //       console.log(result.text);
+    //     },
+    //     (error) => {
+    //       console.log(error.text);
+    //     }
+    //   );
+    // e.target.reset();
+  };
+
+  const notify = () =>
+    toast.success('Email sent, I will get back to you soon!', {
+      position: 'top-right',
+      autoClose: 2500,
+      hideProgressBar: false,
+    });
 
   return (
     <div className="wrapper">
@@ -253,6 +334,13 @@ function App() {
               <SiHeroku />
             </span>
             <span
+              className="ts-logo-wrap"
+              data-logoIsVisible={isVisible}
+              ref={ref4}
+            >
+              <SiTypescript className="ts-logo" />
+            </span>
+            <span
               className="mdb-logo-wrap"
               data-logoIsVisible2={isVisible2}
               ref={ref5}
@@ -265,13 +353,6 @@ function App() {
               ref={ref6}
             >
               <SiJavascript className="js-logo" />
-            </span>
-            <span
-              className="ts-logo-wrap"
-              data-logoIsVisible={isVisible}
-              ref={ref4}
-            >
-              <SiTypescript className="ts-logo" />
             </span>
             <span>
               <SiRedux />
@@ -299,10 +380,39 @@ function App() {
       </section>
       <section className="work section">
         <div className="num-name">
+          {/* PARALLAX TNE NUM NAME! */}
           <h1 id="03" className="section-num">
             03
           </h1>
           <h2>MY WORK</h2>
+        </div>
+        <div className="project-cont">
+          <div className="project1" ref={ref7}>
+            <motion.div className="project1-cont" animate={animation7}>
+              <div className="frame">
+                <div className="red-ball"></div>
+                <div className="yellow-ball"></div>
+                <div className="green-ball"></div>
+              </div>
+              <div className="project1-screen"></div>
+              <div className="laptop-bottom">
+                <div className="dent"></div>
+              </div>
+            </motion.div>
+          </div>
+          <div className="project2" ref={ref8}>
+            <motion.div animate={animation8} className="project2-cont">
+              <div className="frame">
+                <div className="red-ball"></div>
+                <div className="yellow-ball"></div>
+                <div className="green-ball"></div>
+              </div>
+              <div className="project2-screen"></div>
+              <div className="laptop-bottom">
+                <div className="dent"></div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
       <section className="contact section">
@@ -313,6 +423,7 @@ function App() {
           <h2 data-isOrange={orange}>CONTACT ME</h2>
         </div>
         <div className="contact-form">
+          {/* TODO IMPLEMENT NOTIFICATION OF SUCCESFUL SUBMIT SWEETALERT LIBRARY */}
           <form
             id="contact-form"
             autoComplete="off"
@@ -320,14 +431,15 @@ function App() {
             onSubmit={sendEmail}
           >
             <label>What's your name</label>
-            <input onSelect={toggleOrange} type="text" name="user_name" />
+            <input onSelect={toggleOrange} type="text" name="from_name" />
             <label>where can I reach you</label>
-            <input onSelect={toggleOrange} type="email" name="user_email" />
-            <label>Message</label>
+            <input onSelect={toggleOrange} type="email" name="from_contact" />
+            <label>Leave me a message</label>
             <textarea onSelect={toggleOrange} name="message" rows={5} />
-            <button type="submit" value="Send">
+            <button onClick={notify} type="submit" value="Send">
               Lets connect
             </button>
+            <ToastContainer toastClassName="email-toast" />
           </form>
         </div>
       </section>

@@ -2,7 +2,9 @@
 
 .wrapper {
   background-color: #181818;
+  /* overflow-y: scroll; */
   overflow: hidden;
+  /* scroll-snap-type: y mandatory; */
 }
 
 /* WELCOME SECTION */
@@ -12,6 +14,7 @@
   width: 100vw;
   display: flex;
   padding: 30px;
+  /* scroll-snap-align: start; */
   position: relative;
 }
 
@@ -397,6 +400,130 @@
 
 /* TECHNOLOGIES I LOVE MAYBE CROWN ON CSS */
 
+/* USE TOASTIFY TOASTS LIBRARY FOR ICONS NAMES EMAIL SENT */
+
+/* MY WORK SECTION */
+
+.work {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+
+.project-cont {
+  height: 85%;
+  width: 70%;
+  margin-right: 50px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 100px;
+}
+
+.project1 {
+  position: relative;
+  height: 50%;
+  width: 50%;
+  align-self: flex-end;
+  background-color: #181818;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.project1-cont {
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.project1-screen {
+  height: 80%;
+  width: 90%;
+  border: 1.5px solid #bebebe;
+  background-image: url('./assets/ad-gif.gif');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.project2 {
+  height: 50%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.project2-cont {
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.frame {
+  height: 4%;
+  width: 90%;
+  background-color: #bebebe;
+  border-radius: 6px 6px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  padding-left: 7px;
+}
+
+.red-ball {
+  background-color: #fe5f57;
+  height: 0.5vw;
+  width: 0.5vw;
+  border-radius: 50%;
+}
+.yellow-ball {
+  background-color: #ffbc2d;
+  height: 0.5vw;
+  width: 0.5vw;
+  border-radius: 50%;
+  margin-left: 3px;
+}
+.green-ball {
+  background-color: #27c840;
+  height: 0.5vw;
+  width: 0.5vw;
+  border-radius: 50%;
+  margin-left: 3px;
+}
+
+.project2-screen {
+  height: 80%;
+  width: 90%;
+  border: 1.5px solid #bebebe;
+  background-image: url('./assets/trvl-gif.gif');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.laptop-bottom {
+  background-color: #878787;
+  height: 6%;
+  width: 100%;
+  border-radius: 1px 1px 5px 5px;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+}
+
+.dent {
+  background-color: #5d5d5d;
+  border-radius: 0 0 3px 3px;
+  height: 30%;
+  width: 20%;
+}
+
 /* CONTACT SECTION & FORM */
 
 .contact {
@@ -404,6 +531,8 @@
   justify-content: center;
   align-items: center;
   justify-content: flex-end;
+  background-image: url('./assets/ocean4.svg');
+  background-size: cover;
 }
 
 .contact h2[data-isOrange='true'] {
@@ -508,4 +637,11 @@ form button:hover {
 
 form button:active {
   transform: translateY(3px);
+}
+
+.email-toast {
+  background-color: #bebebe;
+  color: #181818;
+  font-size: 1.1vw;
+  font-weight: bold;
 }
