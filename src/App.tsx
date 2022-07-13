@@ -15,7 +15,6 @@ import {
 } from 'react-icons/si';
 import { FiFigma } from 'react-icons/fi';
 import emailjs from '@emailjs/browser';
-import { setCommentRange } from 'typescript';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
@@ -59,6 +58,14 @@ function App() {
   const [ref8, inView8] = useInView({
     threshold: 0.7,
   });
+  // PROJECT 1 INFO
+  const [ref9, inView9] = useInView({
+    threshold: 0.7,
+  });
+  // PROJECT 2 INFO
+  const [ref10, inView10] = useInView({
+    threshold: 0.7,
+  });
 
   // ABOUT SECTION FIRST P TAG
   const animation = useAnimation();
@@ -76,6 +83,10 @@ function App() {
   const animation7 = useAnimation();
   // PROJECT 2 ANIMATION
   const animation8 = useAnimation();
+  // PROJECT 1 INFO
+  const animation9 = useAnimation();
+  // PROJECT 2 INFO
+  const animation10 = useAnimation();
 
   // ABOUT SECTION FIRST P TAG
   useEffect(() => {
@@ -180,7 +191,7 @@ function App() {
           type: 'spring',
           duration: 1,
           bounce: 0.3,
-          delay: 0.5,
+          delay: 0.6,
         },
       });
     }
@@ -200,7 +211,7 @@ function App() {
           type: 'spring',
           duration: 1,
           bounce: 0.3,
-          delay: 0.45,
+          delay: 0.55,
         },
       });
     }
@@ -210,6 +221,39 @@ function App() {
       });
     }
   }, [inView8, animation8]);
+  // PROJECT 1 INFO ANIMATION
+  useEffect(() => {
+    if (inView9) {
+      animation9.start({
+        opacity: 1,
+        transition: {
+          delay: 1.55,
+        },
+      });
+    }
+    if (!inView9) {
+      animation9.start({
+        opacity: 0,
+      });
+    }
+  }, [inView9, animation9]);
+
+  // PROJECT 2 INFO ANIMATION
+  useEffect(() => {
+    if (inView10) {
+      animation10.start({
+        opacity: 1,
+        transition: {
+          delay: 1.45,
+        },
+      });
+    }
+    if (!inView10) {
+      animation10.start({
+        opacity: 0,
+      });
+    }
+  }, [inView10, animation10]);
 
   // FUNCTIONS
 
@@ -220,22 +264,22 @@ function App() {
   const sendEmail = (e: any) => {
     e.preventDefault();
 
-    // emailjs
-    //   .sendForm(
-    //     'service_0qfvivd',
-    //     'template_mrfa2si',
-    //     form.current,
-    //     'x3mm8jhRARDdTOeBt'
-    //   )
-    //   .then(
-    //     (result) => {
-    //       console.log(result.text);
-    //     },
-    //     (error) => {
-    //       console.log(error.text);
-    //     }
-    //   );
-    // e.target.reset();
+    emailjs
+      .sendForm(
+        'service_0qfvivd',
+        'template_mrfa2si',
+        form.current,
+        'x3mm8jhRARDdTOeBt'
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    e.target.reset();
   };
 
   const notify = () =>
@@ -388,6 +432,20 @@ function App() {
         </div>
         <div className="project-cont">
           <div className="project1" ref={ref7}>
+            <div ref={ref9} className="project1-info">
+              <motion.h1 animate={animation9}>TRVL Advisor</motion.h1>
+              <motion.p animate={animation9}>
+                Browse attractions, restaurant menus, and book hotels in major
+                cities around the world.
+              </motion.p>
+              <motion.a
+                animate={animation9}
+                href="https://www.trvladvisor.me/"
+                target="_blank"
+              >
+                Visit TRVL Advisor
+              </motion.a>
+            </div>
             <motion.div className="project1-cont" animate={animation7}>
               <div className="frame">
                 <div className="red-ball"></div>
@@ -401,6 +459,21 @@ function App() {
             </motion.div>
           </div>
           <div className="project2" ref={ref8}>
+            <div ref={ref10} className="project2-info">
+              <motion.h1 animate={animation10}>Arctic Desert</motion.h1>
+              <motion.p animate={animation9}>
+                Collaborative platform crafted with developer teams in mind,
+                Kanban boards, chat functionality, and Git workflow all in one
+                place.
+              </motion.p>
+              <motion.a
+                animate={animation9}
+                href="https://www.articdesert.click/"
+                target="_blank"
+              >
+                Visit Arctic Desert
+              </motion.a>
+            </div>
             <motion.div animate={animation8} className="project2-cont">
               <div className="frame">
                 <div className="red-ball"></div>

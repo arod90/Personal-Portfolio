@@ -442,7 +442,7 @@
 
 .project1-screen {
   height: 80%;
-  width: 90%;
+  width: 88%;
   border: 1.5px solid #bebebe;
   background-image: url('./assets/ad-gif.gif');
   background-size: contain;
@@ -450,14 +450,17 @@
 }
 
 .project2 {
+  position: relative;
   height: 50%;
   width: 50%;
+  background-color: #181818;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .project2-cont {
+  position: relative;
   height: 100%;
   width: 100%;
   border-radius: 5px;
@@ -468,7 +471,7 @@
 
 .frame {
   height: 4%;
-  width: 90%;
+  width: 88%;
   background-color: #bebebe;
   border-radius: 6px 6px 0 0;
   display: flex;
@@ -500,7 +503,7 @@
 
 .project2-screen {
   height: 80%;
-  width: 90%;
+  width: 88%;
   border: 1.5px solid #bebebe;
   background-image: url('./assets/trvl-gif.gif');
   background-size: contain;
@@ -509,19 +512,77 @@
 
 .laptop-bottom {
   background-color: #878787;
-  height: 6%;
+  height: 6.9%;
   width: 100%;
-  border-radius: 1px 1px 5px 5px;
+  border-radius: 1px 1px 8px 8px;
   align-self: center;
   display: flex;
   justify-content: center;
 }
 
 .dent {
-  background-color: #5d5d5d;
+  background-color: #606060;
   border-radius: 0 0 3px 3px;
   height: 30%;
   width: 20%;
+}
+
+/* PROJECT INFO */
+
+.project1-info {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+  color: #bebebe91;
+}
+
+.project1-info p {
+  margin-top: 15px;
+  font-size: 1.5vw;
+  margin-bottom: 25px;
+}
+
+.project1-info a {
+  font-size: 1.2vw;
+  border: 1px solid #bebebe;
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.project1-info a:visited {
+  text-decoration: none;
+  color: #bebebe;
+}
+
+.project2-info {
+  text-align: right;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+  padding-top: 50px;
+  color: #bebebe91;
+}
+
+.project2-info p {
+  margin-top: 15px;
+  font-size: 1.5vw;
+  margin-bottom: 25px;
+}
+
+.project2-info a {
+  font-size: 1.2vw;
+  border: 1px solid #bebebe;
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.project2-info a:visited {
+  text-decoration: none;
+  color: #bebebe;
 }
 
 /* CONTACT SECTION & FORM */
