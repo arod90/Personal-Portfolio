@@ -227,7 +227,8 @@ function App() {
       animation9.start({
         opacity: 1,
         transition: {
-          delay: 1.55,
+          // delay: 1.55,
+          delay: 1.45,
         },
       });
     }
@@ -244,7 +245,8 @@ function App() {
       animation10.start({
         opacity: 1,
         transition: {
-          delay: 1.45,
+          // delay: 1.45,
+          delay: 1.55,
         },
       });
     }
@@ -431,8 +433,8 @@ function App() {
           <h2>MY WORK</h2>
         </div>
         <div className="project-cont">
-          <div className="project1" ref={ref7}>
-            <div ref={ref9} className="project1-info">
+          <div className="project1" ref={ref8}>
+            <div ref={ref10} className="project1-info">
               <motion.h1 animate={animation9}>TRVL Advisor</motion.h1>
               <motion.p animate={animation9}>
                 Browse attractions, restaurant menus, and book hotels in major
@@ -458,8 +460,8 @@ function App() {
               </div>
             </motion.div>
           </div>
-          <div className="project2" ref={ref8}>
-            <div ref={ref10} className="project2-info">
+          <div className="project2" ref={ref7}>
+            <div ref={ref9} className="project2-info">
               <motion.h1 animate={animation10}>Arctic Desert</motion.h1>
               <motion.p animate={animation9}>
                 Collaborative platform crafted with developer teams in mind,
