@@ -753,14 +753,16 @@ form button:active {
   right: 1.5%;
   z-index: 20;
   color: #e6553467;
+  border: none;
+  animation: fadeIn 1s ease-in-out;
+  animation-delay: 6s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  opacity: 0;
 }
 
 .back-to-top:hover {
   color: #e65534d6;
-}
-
-.back-to-top {
-  border: none;
 }
 
 .back-to-top:focus {
