@@ -768,10 +768,13 @@ form button:active {
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   opacity: 0;
+  font-size: 3vw;
+  transition: 0.5s;
 }
 
 .back-to-top:hover {
   color: #e65534d6;
+  font-size: 4.5vw;
 }
 
 .back-to-top:focus {

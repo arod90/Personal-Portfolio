@@ -594,7 +594,6 @@ function App() {
           data-tip="Back to top"
           className="back-to-top"
           data-place="left"
-          size={60}
         />
       </Link>
       <ReactTooltip id="to-top" />
