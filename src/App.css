@@ -306,7 +306,7 @@
   /* transform: rotate(-90deg); */
 }
 
-.ts-logo-wrap[data-logoIsVisible='true'] {
+.ts-logo-wrap[data-logoisvisible='true'] {
   animation: rotate-90-cw 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   animation-delay: 0.9s;
 }
@@ -315,7 +315,7 @@
   color: #fcdc00;
 }
 
-.js-logo-wrap[data-logoIsVisible3='true'] {
+.js-logo-wrap[data-logoisvisible3='true'] {
   animation: crescendo 1.5s alternate infinite ease-in;
   animation-delay: 1s;
 }
@@ -324,7 +324,7 @@
   color: #00ec64;
 }
 
-.mdb-logo-wrap[data-logoIsVisible2='true'] {
+.mdb-logo-wrap[data-logoisvisible2='true'] {
   animation: rotate-90-cw 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
   transform: translate3d(0, 0, 0);
@@ -449,7 +449,7 @@
 .project-cont {
   height: 85%;
   width: 70%;
-  margin-right: 50px;
+  margin-right: 20px;
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
@@ -477,12 +477,17 @@
 }
 
 .project1-screen {
-  height: 80%;
+  height: 75%;
   width: 88%;
-  border: 1.5px solid #bebebe;
-  background-image: url('./assets/ad-gif.gif');
+  border: 3px solid #bebebe;
+  /* background-image: url('./assets/ad-gif.gif');
   background-size: contain;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
+}
+
+.project1-screen img {
+  height: 100%;
+  width: 100%;
 }
 
 .project2 {
@@ -496,7 +501,6 @@
 }
 
 .project2-cont {
-  position: relative;
   height: 100%;
   width: 100%;
   border-radius: 5px;
@@ -538,12 +542,17 @@
 }
 
 .project2-screen {
-  height: 80%;
+  height: 75%;
   width: 88%;
-  border: 1.5px solid #bebebe;
-  background-image: url('./assets/trvl-gif.gif');
+  border: 3px solid #bebebe;
+  /* background-image: url('./assets/trvl-gif.gif');
   background-size: contain;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
+}
+
+.project2-screen img {
+  height: 100%;
+  width: 100%;
 }
 
 .laptop-bottom {
@@ -634,12 +643,12 @@
   background-size: cover;
 }
 
-.contact h2[data-isOrange='true'] {
+.contact h2[data-isorange='true'] {
   color: #e65634;
   opacity: 0.7;
 }
 
-.contact h1[data-isOrange='true'] {
+.contact h1[data-isorange='true'] {
   color: #e65634;
   opacity: 0.7;
 }

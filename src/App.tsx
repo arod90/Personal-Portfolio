@@ -398,7 +398,7 @@ function App() {
             </span>
             <span
               // className="ts-logo-wrap"
-              // data-logoIsVisible={isVisible}
+              // data-logoisvisible={isVisible}
               // ref={ref4}
               data-for="ts"
               data-tip="<div class='tooltip-cont'><p><strong>TypeScript</strong> </br></br> Programming language developed and maintained by Microsoft. It is a strict syntactical superset of JavaScript.</p></div>"
@@ -407,7 +407,7 @@ function App() {
             </span>
             <span
               className="mdb-logo-wrap"
-              data-logoIsVisible2={isVisible2}
+              data-logoisvisible2={isVisible2}
               ref={ref5}
               data-for="mdb"
               data-tip="<div class='tooltip-cont'><p><strong>MongoDB</strong> </br></br> Open source cross-platform document-oriented database program. Classified as a NoSQL database.</p></div>"
@@ -416,7 +416,7 @@ function App() {
             </span>
             <span
               className="js-logo-wrap"
-              data-logoIsVisible3={isVisible3}
+              data-logoisvisible3={isVisible3}
               ref={ref6}
               data-for="js"
               data-tip="<div class='tooltip-cont'><p><strong>JavaScript</strong> </br></br> Programming language that is one of the core technologies of the World Wide Web, 98% of websites use JS on the client side.</p></div>"
@@ -510,7 +510,9 @@ function App() {
                 <div className="yellow-ball"></div>
                 <div className="green-ball"></div>
               </div>
-              <div className="project1-screen"></div>
+              <div className="project1-screen">
+                <img src={require('./assets/ad-gif.gif')} alt="" />
+              </div>
               <div className="laptop-bottom">
                 <div className="dent"></div>
               </div>
@@ -542,7 +544,9 @@ function App() {
                 <div className="yellow-ball"></div>
                 <div className="green-ball"></div>
               </div>
-              <div className="project2-screen"></div>
+              <div className="project2-screen">
+                <img src={require('./assets/trvl-gif.gif')} alt="" />
+              </div>
               <div className="laptop-bottom">
                 <div className="dent"></div>
               </div>
@@ -552,10 +556,10 @@ function App() {
       </section>
       <section className="contact section">
         <div className="num-name">
-          <h1 data-isOrange={orange} id="04" className="section-num">
+          <h1 data-isorange={orange} id="04" className="section-num">
             04
           </h1>
-          <h2 data-isOrange={orange}>CONTACT ME</h2>
+          <h2 data-isorange={orange}>CONTACT ME</h2>
         </div>
         <div className="contact-form">
           <form
