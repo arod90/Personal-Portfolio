@@ -4,6 +4,8 @@ import { useInView } from 'react-intersection-observer';
 import { motion, useAnimation } from 'framer-motion';
 import { FaReact, FaNodeJs } from 'react-icons/fa';
 import { DiCss3, DiHtml5 } from 'react-icons/di';
+import { BsFillArrowUpCircleFill } from 'react-icons/bs';
+import { BiHelpCircle } from 'react-icons/bi';
 import {
   SiMongodb,
   SiExpress,
@@ -16,10 +18,12 @@ import {
 import { TbBrandVercel } from 'react-icons/tb';
 import emailjs from '@emailjs/browser';
 import { ToastContainer, toast } from 'react-toastify';
+import ReactTooltip from 'react-tooltip';
 import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 
 function App() {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isVisible, setIsVisible] = useState(false);
   const [isVisible2, setIsVisible2] = useState(false);
   const [isVisible3, setIsVisible3] = useState(false);
@@ -39,6 +43,7 @@ function App() {
     threshold: 0.9,
   });
   // TS LOGO ANIMATION
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [ref4, inView4] = useInView({
     threshold: 0.5,
   });
@@ -292,7 +297,7 @@ function App() {
     });
 
   return (
-    <div className="wrapper">
+    <div id="top" className="wrapper">
       <section className="welcome section">
         <div className="welcome-left">
           <h2>Andres Rodriguez</h2>
@@ -370,19 +375,33 @@ function App() {
             02
           </h1>
           <h2>TOOLKIT</h2>
+          <BiHelpCircle
+            data-for="help-me"
+            data-tip="Hover over the icons to see additional info"
+            className="help-circle"
+          />
+          <ReactTooltip id="help-me" />
         </div>
         <div className="tool-cont">
           <motion.div className="tool-wrapper">
-            <span>
+            <span
+              data-for="ex"
+              data-tip="<div class='tooltip-cont'><p><strong>Express</strong> </br></br> Back end framework designed for building web applications and APIs. It has been called the de facto standard server.</p></div>"
+            >
               <SiExpress color="#EEEEEE" />
             </span>
-            <span>
+            <span
+              data-for="heroku"
+              data-tip="<div class='tooltip-cont'><p><strong>Heroku</strong> </br></br> Cloud platform as a service supporting several programming languages.</p></div>"
+            >
               <SiHeroku color="#430098" />
             </span>
             <span
-            // className="ts-logo-wrap"
-            // data-logoIsVisible={isVisible}
-            // ref={ref4}
+              // className="ts-logo-wrap"
+              // data-logoIsVisible={isVisible}
+              // ref={ref4}
+              data-for="ts"
+              data-tip="<div class='tooltip-cont'><p><strong>TypeScript</strong> </br></br> Programming language developed and maintained by Microsoft. It is a strict syntactical superset of JavaScript.</p></div>"
             >
               <SiTypescript className="ts-logo" />
             </span>
@@ -390,6 +409,8 @@ function App() {
               className="mdb-logo-wrap"
               data-logoIsVisible2={isVisible2}
               ref={ref5}
+              data-for="mdb"
+              data-tip="<div class='tooltip-cont'><p><strong>MongoDB</strong> </br></br> Open source cross-platform document-oriented database program. Classified as a NoSQL database.</p></div>"
             >
               <SiMongodb className="mdb-logo" />
             </span>
@@ -397,31 +418,66 @@ function App() {
               className="js-logo-wrap"
               data-logoIsVisible3={isVisible3}
               ref={ref6}
+              data-for="js"
+              data-tip="<div class='tooltip-cont'><p><strong>JavaScript</strong> </br></br> Programming language that is one of the core technologies of the World Wide Web, 98% of websites use JS on the client side.</p></div>"
             >
               <SiJavascript className="js-logo" />
             </span>
-            <span>
+            <span
+              data-for="firebase"
+              data-tip="<div class='tooltip-cont'><p><strong>FIREBASE</strong> </br></br> Firebase is a platform developed by Google for creating mobile and web applications.</p></div>"
+            >
               <SiFirebase color="#FFA611" />
             </span>
-            <span>
+            <span
+              data-for="node"
+              data-tip="<div class='tooltip-cont'><p><strong>Node.js</strong> </br></br> Open-source, cross-platform, back-end JavaScript runtime environment, executes JavaScript code outside a web browser.</p></div>"
+            >
               <FaNodeJs color="#68A063" />
             </span>
-            <span>
+            <span
+              data-for="redux"
+              data-tip="<div class='tooltip-cont'><p><strong>REDUX</strong> </br></br> Open-source JavaScript library for managing and centralizing application state.</p></div>"
+            >
               <SiRedux color="#764ABC" />
             </span>
-            <span>
+            <span
+              data-for="react"
+              data-tip="<div class='tooltip-cont'><p><strong>REACT</strong> </br></br> Free and open-source front-end JavaScript library for building user interfaces.</p></div>"
+            >
               <FaReact className="react-logo" />
             </span>
-            <span>
+            <span
+              data-for="html"
+              data-tip="<div class='tooltip-cont'><p><strong>HTML5</strong> </br></br> The standard markup language for documents designed to be displayed in a web browser.</p></div>"
+            >
               <DiHtml5 color="#FF5733" />
             </span>
-            <span>
+            <span
+              data-for="css"
+              data-tip="<div class='tooltip-cont'><p><strong>CSS3</strong> </br></br> Stylesheet language used to describe the presentation of a document written in HTML.</p></div>"
+            >
               <DiCss3 className="css-logo" />
             </span>
-            <span>
+            <span
+              data-for="vercel"
+              data-tip="<div class='tooltip-cont'><p><strong>VERCEL</strong> </br></br> Platform for frontend frameworks and static sites designed to develop, preview, and ship sites.</p></div>"
+            >
               <TbBrandVercel color="#EEEE" />
             </span>
           </motion.div>
+          <ReactTooltip html={true} id="vercel" />
+          <ReactTooltip html={true} id="css" />
+          <ReactTooltip html={true} id="html" />
+          <ReactTooltip html={true} id="react" />
+          <ReactTooltip html={true} id="redux" />
+          <ReactTooltip html={true} id="node" />
+          <ReactTooltip html={true} id="firebase" />
+          <ReactTooltip html={true} id="js" />
+          <ReactTooltip html={true} id="mdb" />
+          <ReactTooltip html={true} id="ts" />
+          <ReactTooltip html={true} id="heroku" />
+          <ReactTooltip html={true} id="ex" />
         </div>
       </section>
       <section className="work section">
@@ -502,7 +558,6 @@ function App() {
           <h2 data-isOrange={orange}>CONTACT ME</h2>
         </div>
         <div className="contact-form">
-          {/* TODO IMPLEMENT NOTIFICATION OF SUCCESFUL SUBMIT SWEETALERT LIBRARY */}
           <form
             id="contact-form"
             autoComplete="off"
@@ -512,16 +567,33 @@ function App() {
             <label>What's your name</label>
             <input onSelect={toggleOrange} type="text" name="from_name" />
             <label>where can I reach you</label>
-            <input onSelect={toggleOrange} type="email" name="from_contact" />
+            <input
+              data-for="enter-email"
+              data-tip="Enter your e-mail"
+              onSelect={toggleOrange}
+              type="email"
+              name="from_contact"
+            />
             <label>Leave me a message</label>
             <textarea onSelect={toggleOrange} name="message" rows={5} />
             <button onClick={notify} type="submit" value="Send">
               Lets connect
             </button>
             <ToastContainer toastClassName="email-toast" />
+            <ReactTooltip id="enter-email" />
           </form>
         </div>
       </section>
+      <Link to="top" smooth={true}>
+        <BsFillArrowUpCircleFill
+          data-for="to-top"
+          data-tip="Back to top"
+          className="back-to-top"
+          data-place="left"
+          size={60}
+        />
+      </Link>
+      <ReactTooltip id="to-top" />
     </div>
   );
 }

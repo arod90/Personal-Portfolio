@@ -7,6 +7,7 @@
   /* overflow-x: hidden; */
   /* scroll-snap-type: y proximity; */
   overflow: hidden;
+  position: relative;
 }
 
 /* WELCOME SECTION */
@@ -81,8 +82,8 @@
   letter-spacing: 0.15em;
   position: absolute;
   top: 52%;
-  animation: typing3 3.5s steps(40, end);
-  animation-delay: 5.5s;
+  animation: fadeIn 1s ease-in-out;
+  animation-delay: 6s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   opacity: 0;
@@ -150,7 +151,7 @@
   display: flex;
   flex-direction: column;
   animation: fadeIn 1s ease-in-out;
-  animation-delay: 7.5s;
+  animation-delay: 6s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   opacity: 0;
@@ -202,16 +203,17 @@
   justify-content: center;
   align-items: center;
   color: #bebebe;
-  opacity: 0.12;
 }
 
 .section-num {
   font-size: 20vw;
+  opacity: 0.12;
 }
 
 .num-name h2 {
   font-size: 4.1vw;
   margin-top: -70px;
+  opacity: 0.12;
 }
 
 /* ABOUT SECTION */
@@ -241,6 +243,18 @@
 
 /* TOOLKIT SECTION */
 
+.help-circle {
+  cursor: pointer;
+  font-size: 6vw;
+  opacity: 0.12;
+  animation: crescendo2 1s alternate infinite ease-in;
+}
+
+.help-circle:hover {
+  color: #bebebe;
+  opacity: 0.52;
+}
+
 .tool-cont {
   color: #bebebe;
   padding: 50px;
@@ -257,6 +271,10 @@
   width: 60%;
   height: fit-content;
   font-size: 10vw;
+}
+
+.tool-wrapper span {
+  cursor: help;
 }
 
 .tool-wrapper span {
@@ -318,6 +336,10 @@
   animation: cssbounce 8s linear infinite;
 }
 
+.tooltip-cont {
+  max-width: 200px;
+}
+
 /* MAKE THE ICONS POP ON SCROLL */
 
 @keyframes cssbounce {
@@ -353,6 +375,15 @@
   }
   100% {
     transform: scale(1.02);
+  }
+}
+
+@keyframes crescendo2 {
+  0% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1.05);
   }
 }
 
@@ -605,11 +636,12 @@
 
 .contact h2[data-isOrange='true'] {
   color: #e65634;
-  opacity: 1 !important;
+  opacity: 0.7;
 }
 
 .contact h1[data-isOrange='true'] {
   color: #e65634;
+  opacity: 0.7;
 }
 
 .contact-form {
@@ -713,4 +745,31 @@ form button:active {
   color: #181818;
   font-size: 1.1vw;
   font-weight: bold;
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 3%;
+  right: 1.5%;
+  z-index: 20;
+  color: #e6553467;
+}
+
+.back-to-top:hover {
+  color: #e65534d6;
+}
+
+.back-to-top {
+  border: none;
+}
+
+.back-to-top:focus {
+  outline: none;
+  border: none;
+}
+
+.back-to-top:active {
+  outline: none;
+  border: none;
+  transform: translateY(3px);
 }
