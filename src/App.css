@@ -96,6 +96,7 @@
     width: 100%;
   }
 }
+
 @keyframes typing2 {
   from {
     width: 0;
@@ -106,6 +107,7 @@
     opacity: 1;
   }
 }
+
 @keyframes typing3 {
   from {
     width: 0;
@@ -268,7 +270,7 @@
 }
 
 .react-logo {
-  color: #e65634;
+  color: #61dbfb;
   animation: spin 9s linear infinite;
 }
 
@@ -283,7 +285,7 @@
 
 .ts-logo {
   color: #3077c6;
-  transform: rotate(-90deg);
+  /* transform: rotate(-90deg); */
 }
 
 .ts-logo-wrap[data-logoIsVisible='true'] {
@@ -387,6 +389,7 @@
     transform: rotate(90deg);
   }
 }
+
 @keyframes rotate-90-cw {
   0% {
     -webkit-transform: rotate(0);
@@ -604,6 +607,7 @@
   color: #e65634;
   opacity: 1 !important;
 }
+
 .contact h1[data-isOrange='true'] {
   color: #e65634;
 }

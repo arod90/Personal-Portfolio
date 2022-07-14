@@ -13,7 +13,7 @@ import {
   SiFirebase,
   SiHeroku,
 } from 'react-icons/si';
-import { FiFigma } from 'react-icons/fi';
+import { TbBrandVercel } from 'react-icons/tb';
 import emailjs from '@emailjs/browser';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -374,15 +374,15 @@ function App() {
         <div className="tool-cont">
           <motion.div className="tool-wrapper">
             <span>
-              <SiExpress />
+              <SiExpress color="#EEEEEE" />
             </span>
             <span>
-              <SiHeroku />
+              <SiHeroku color="#430098" />
             </span>
             <span
-              className="ts-logo-wrap"
-              data-logoIsVisible={isVisible}
-              ref={ref4}
+            // className="ts-logo-wrap"
+            // data-logoIsVisible={isVisible}
+            // ref={ref4}
             >
               <SiTypescript className="ts-logo" />
             </span>
@@ -401,25 +401,25 @@ function App() {
               <SiJavascript className="js-logo" />
             </span>
             <span>
-              <SiRedux />
+              <SiFirebase color="#FFA611" />
             </span>
             <span>
-              <SiFirebase />
+              <FaNodeJs color="#68A063" />
             </span>
             <span>
-              <FaNodeJs />
+              <SiRedux color="#764ABC" />
             </span>
             <span>
               <FaReact className="react-logo" />
             </span>
             <span>
-              <DiHtml5 />
+              <DiHtml5 color="#FF5733" />
             </span>
             <span>
               <DiCss3 className="css-logo" />
             </span>
             <span>
-              <FiFigma />
+              <TbBrandVercel color="#EEEE" />
             </span>
           </motion.div>
         </div>
@@ -433,8 +433,8 @@ function App() {
           <h2>MY WORK</h2>
         </div>
         <div className="project-cont">
-          <div className="project1" ref={ref8}>
-            <div ref={ref10} className="project1-info">
+          <div className="project1">
+            <div className="project1-info">
               <motion.h1 animate={animation9}>TRVL Advisor</motion.h1>
               <motion.p animate={animation9}>
                 Browse attractions, restaurant menus, and book hotels in major
@@ -460,8 +460,12 @@ function App() {
               </div>
             </motion.div>
           </div>
-          <div className="project2" ref={ref7}>
-            <div ref={ref9} className="project2-info">
+          <span ref={ref7} className="spacer"></span>
+          <span ref={ref8} className="spacer"></span>
+          <span ref={ref9} className="spacer"></span>
+          <span ref={ref10} className="spacer"></span>
+          <div className="project2">
+            <div className="project2-info">
               <motion.h1 animate={animation10}>Arctic Desert</motion.h1>
               <motion.p animate={animation9}>
                 Collaborative platform crafted with developer teams in mind,
