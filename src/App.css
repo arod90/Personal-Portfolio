@@ -19,6 +19,7 @@
   padding: 30px;
   /* scroll-snap-align: start; */
   position: relative;
+  border: 2px solid lime;
 }
 
 .welcome-left {
@@ -212,7 +213,7 @@
 
 .num-name h2 {
   font-size: 4.1vw;
-  margin-top: -70px;
+  margin-top: -50px;
   opacity: 0.12;
 }
 
@@ -786,4 +787,116 @@ form button:active {
   outline: none;
   border: none;
   transform: translateY(3px);
+}
+
+@media screen and (max-width: 1100px) {
+  /*  WELCOME SECTION QUERY */
+  .welcome {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .welcome-left {
+    height: 80vh;
+    width: 100vw;
+  }
+  .welcome-right {
+    width: 100vw;
+    height: 20vh;
+  }
+  .welcome-left h2 {
+    font-size: 6vw;
+    animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+  }
+  .h3-cont h3 {
+    font-size: 3.5vw;
+  }
+  .section li {
+    font-size: 4vw;
+  }
+  .section ul {
+    margin-right: 40px;
+  }
+  /*  ABOUT SECTION QUERY */
+  .p-wrapper {
+    width: 90vw;
+  }
+  .p-wrapper p {
+    font-size: 3.6vw;
+  }
+  /*  TOOLKIT SECTION QUERY */
+  .tool-wrapper {
+    width: 80vw;
+    margin-top: 200px;
+  }
+  .tool-wrapper span {
+    font-size: 16vw;
+  }
+  /*  MY WORK SECTION QUERY */
+  .project-cont {
+    width: 100vw;
+    height: 60vh;
+    align-self: flex-end;
+  }
+  .project-cont h1 {
+    font-size: 5vw;
+  }
+  .project-cont p {
+    font-size: 2.5vw;
+  }
+  .project-cont a {
+    font-size: 3vw;
+  }
+  .project1-info {
+    padding-left: 30px;
+  }
+  .project2-info {
+    padding-right: 30px;
+  }
+  /*  CONTACT SECTION QUERY */
+  .contact-form {
+    height: 60vh;
+    width: 70vw;
+    margin-top: 150px;
+    margin-right: 0px;
+  }
+  .contact-form label {
+    font-size: 3.3vw;
+  }
+  form input {
+    width: 100%;
+    border-bottom: 2px solid #bebebe72;
+    font-size: 3vw;
+  }
+  form textarea {
+    width: 100%;
+    font-size: 3vw;
+  }
+  form button {
+    font-size: 3vw;
+  }
+  /* SECTION NUMS QUERY */
+  .num-name {
+    top: 0%;
+    left: 2%;
+  }
+
+  .section-num {
+    font-size: 23vw;
+    opacity: 0.12;
+  }
+
+  .num-name h2 {
+    font-size: 6.1vw;
+    margin-top: -40px;
+  }
+  .back-to-top {
+    position: fixed;
+    bottom: 3%;
+    right: 1.5%;
+    font-size: 7vw;
+  }
+
+  .back-to-top:hover {
+    font-size: 8vw;
+  }
 }
