@@ -958,7 +958,7 @@ form button:active {
     margin-left: 50px;
   }
   .tool-wrapper span {
-    font-size: 22vw;
+    font-size: 18vw;
   }
   /*  MY WORK SECTION QUERY */
   .work {
@@ -980,10 +980,13 @@ form button:active {
   .project-cont a {
     font-size: 2.6vw;
   }
+
   .project2-cont {
     width: 100%;
     padding: 0px;
     padding-top: 50px;
+    overflow: visible;
+    z-index: 20;
   }
   .project1-cont {
     width: 100%;
@@ -992,9 +995,13 @@ form button:active {
   }
   .project1-info {
     padding-left: 30px;
+    padding: 0px !important;
+    padding-left: 10px !important;
   }
   .project2-info {
     padding-right: 30px;
+    padding: 0px;
+    padding-right: 15px;
   }
   .project1-screen {
     height: 50%;
@@ -1062,5 +1069,20 @@ form button:active {
 
   .back-to-top:hover {
     font-size: 8vw;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .project1-screen {
+    width: 68%;
+  }
+  .project2-screen {
+    width: 68%;
+  }
+  .frame {
+    width: 68%;
+  }
+  .laptop-bottom {
+    width: 78%;
   }
 }
