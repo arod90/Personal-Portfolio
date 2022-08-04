@@ -1001,11 +1001,12 @@ form button:active {
   .project2-info {
     padding-right: 30px;
     padding: 0px;
+    padding-top: 50px;
     padding-right: 15px;
   }
   .project1-screen {
     height: 50%;
-    width: 100%;
+    width: 90%;
   }
   .project1-info {
     width: 90%;
@@ -1013,37 +1014,39 @@ form button:active {
   }
   .project2-screen {
     height: 50%;
-    width: 100%;
+    width: 90%;
   }
   .frame {
     height: 10px;
-    width: 100%;
+    width: 90%;
   }
   .laptop-bottom {
     height: 15px;
-    width: 110%;
+    width: 100%;
   }
   /*  CONTACT SECTION QUERY */
   .contact-form {
-    height: 60vh;
-    width: 70vw;
-    margin-top: 150px;
+    height: 80vh;
+    width: 80vw;
+    margin-top: 50px;
     margin-right: 0px;
   }
   .contact-form label {
-    font-size: 3.3vw;
+    font-size: 5vw;
+    margin-right: 10px;
   }
   form input {
     width: 100%;
     border-bottom: 2px solid #bebebe72;
-    font-size: 3vw;
+    font-size: 3.9vw;
   }
   form textarea {
     width: 100%;
-    font-size: 3vw;
+    font-size: 4vw;
   }
   form button {
-    font-size: 3vw;
+    font-size: 4.5vw;
+    width: 70%;
   }
   /* SECTION NUMS QUERY */
   .num-name {
